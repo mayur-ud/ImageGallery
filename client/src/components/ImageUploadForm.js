@@ -22,7 +22,7 @@ const ImageUploadForm = ({setHasChanges , hasChanges }) => {
       formData.append('userid', JSON.parse(localStorage.getItem('user'))._id);
 
 
-      const response = await axios.post('http://localhost:5000/api/v1/transactions/add-image', formData, {
+      const response = await axios.post('http://localhost:5000/api/v1/Images/add-image', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -40,10 +40,29 @@ const ImageUploadForm = ({setHasChanges , hasChanges }) => {
   };
 
   return (
-    <div className=''>
-      <h2 className='bold'>Image Upload</h2>
-      <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageChange} style={{ borderRadius : '4px' , border : '1px solid rgba(0,0,0,0.5)', padding : '4px' , margin: '10px 20px'}}  />
-      <Button className='uploadButton' disabled={uploading} type='primary' styles={{ color : 'green'  , marginleft : '4px'}} onClick={handleUpload} >Upload</Button>
+    <div className="">
+      <h2 className="bold">Upload Image</h2>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+        style={{
+          borderRadius: "4px",
+          border: "1px solid rgba(0,0,0,0.5)",
+          padding: "4px",
+          margin: "10px 20px",
+        }}
+      />
+      <Button
+        className="uploadButton"
+        disabled={uploading}
+        type="primary"
+        styles={{ color: "green", marginleft: "4px" }}
+        onClick={handleUpload}
+      >
+        Upload
+      </Button>
     </div>
   );
 };

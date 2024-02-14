@@ -18,7 +18,7 @@ function Dashboard() {
         images : prevImg.images,
         reqStatus: 'pending'
       }));
-        const response = await axios.post(`http://localhost:5000/api/v1/transactions/delete-image`,{
+        const response = await axios.post(`http://localhost:5000/api/v1/Images/delete-image`,{
             imgId : imgId
         });
 
@@ -39,7 +39,7 @@ function Dashboard() {
     }));
     const fetchImages = async () => {
       try {
-          const response = await axios.post(`http://localhost:5000/api/v1/transactions/get-images`,{
+          const response = await axios.post(`http://localhost:5000/api/v1/Images/get-images`,{
               userid:JSON.parse(localStorage.getItem('user'))._id,
           });
 

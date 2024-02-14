@@ -49,13 +49,13 @@ const ImageGallery = ({ status, images, deleteImage }) => {
             </div>
           ))}
         </Image.PreviewGroup>
-        {images.length === 0 && (
-          <div>
-            <h4>Upload Images to see here &nbsp;</h4>
-            <img src={emptyImage} />
-          </div>
-        )}
       </div>
+      {images.length === 0 && (
+        <div style={{ textAlign: "center" }}>
+          <h4>Upload Images to see here &nbsp;</h4>
+          <img src={emptyImage} />
+        </div>
+      )}
     </div>
   );
 };
