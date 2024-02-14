@@ -34,11 +34,16 @@ const ImageGallery = ({ status, images, deleteImage }) => {
                 style={{
                   background: "transparent",
                   border: "none",
+                  position: "absolute",
+                  top: "4px",
+                  right: "36px",
                 }}
                 onClick={() => deleteImage(image.Imgid)}
               >
                 <DeleteFilled
-                  style={{ color: "rgba(200,0,0,1)", fontSize: "2rem" }}
+                  style={{
+                    color: "rgba(255,0,0,1)",
+                  }}
                 />
               </button>
             </div>

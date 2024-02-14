@@ -43,7 +43,7 @@ const ImageUploadForm = ({setHasChanges , hasChanges }) => {
     <div className=''>
       <h2 className='bold'>Image Upload</h2>
       <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageChange} style={{ borderRadius : '4px' , border : '1px solid rgba(0,0,0,0.5)', padding : '4px' , margin: '10px 20px'}}  />
-      <Button disabled={uploading} type='primary' styles={{ color : 'green'  , marginleft : '4px'}} onClick={handleUpload} >Upload</Button>
+      <Button className='uploadButton' disabled={uploading} type='primary' styles={{ color : 'green'  , marginleft : '4px'}} onClick={handleUpload} >Upload</Button>
     </div>
   );
 };
