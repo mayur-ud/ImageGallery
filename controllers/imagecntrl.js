@@ -1,6 +1,6 @@
-const storageModel = require("../models/transactionmodel");
+const storageModel = require("../models/Imagemodel");
 
-const getAllTransaction= async (req,res)=>{
+const getImages= async (req,res)=>{
     try {
         const {userid} = req.body;
         const images = await storageModel.find({ userid: userid });
@@ -19,11 +19,11 @@ const getAllTransaction= async (req,res)=>{
 }
 
 
-const deleteTransaction= async (req,res)=> {
+const deleteImages= async (req,res)=> {
     try {
     
         const response = await storageModel.findByIdAndDelete(req.body.imgId)  
-        res.status(200).send("Transaction deleted successfully")
+        res.status(200).send("Image deleted successfully")
     } catch (error) {
         console.log(error)
         res.status(500).json(error)
@@ -31,7 +31,7 @@ const deleteTransaction= async (req,res)=> {
     }
 }
 
-const addTransaction = async(req,res)=>{
+const addImages = async(req,res)=>{
     try {
         const { userid } = req.body;
         const image = req.file; 
@@ -47,7 +47,7 @@ const addTransaction = async(req,res)=>{
         
         await newImage.save()
         console.log("Upload Finished")
-        res.status(201).send('Transaction Created')
+        res.status(201).send('Image Created')
     } catch (error) {
         console.log(error)
         res.status(500).json(error)
@@ -55,5 +55,5 @@ const addTransaction = async(req,res)=>{
 }
 
 
-module.exports={getAllTransaction,addTransaction,deleteTransaction}
+module.exports = { getImages, addImages, deleteImages };
 

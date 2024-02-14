@@ -18,13 +18,11 @@ const PORT = process.env.PORT;
 app.use(express.json())
 app.use(cors())
 
-//routes
-// readdirSync('./routes').map((route)=>app.use('/api/v1',require('./routes/'+ route)))
 
 //user routes
 app.use('/api/v1/users', require('./routes/userRoutes'))
 //transaction routes
-app.use('/api/v1/transactions',require('./routes/transaction'))
+app.use('/api/v1/transactions',require('./routes/Images'))
 
 app.use(express.static(path.join(__dirname, './client/build')))
 
